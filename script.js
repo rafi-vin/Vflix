@@ -112,7 +112,10 @@ function createFloatingWhatsApp() {
   floatingBtn.className = "floating-whatsapp";
 
   floatingBtn.addEventListener("click", () => {
-    window.open("https://wa.me/+62 857-1136-5650", "_blank");
+    window.open(
+      "https://wa.me/6285711365650?text=Halo%20saya%20mau%20pesan%20Netflix",
+      "_blank"
+    );
   });
 
   document.body.appendChild(floatingBtn);
