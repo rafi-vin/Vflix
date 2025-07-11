@@ -112,7 +112,7 @@ function createFloatingWhatsApp() {
   floatingBtn.className = "floating-whatsapp";
 
   floatingBtn.addEventListener("click", () => {
-    window.open("https://wa.me/628XXXXXXXXXX", "_blank");
+    window.open("https://wa.me/+62 857-1136-5650", "_blank");
   });
 
   document.body.appendChild(floatingBtn);
