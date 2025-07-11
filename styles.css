@@ -475,28 +475,6 @@ footer {
   width: 20px;
 }
 
-.social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.social-link {
-  display: inline-block;
-  background: #e50914;
-  color: #ffffff;
-  padding: 12px;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.social-link:hover {
-  background: #b81d24;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
-}
-
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
