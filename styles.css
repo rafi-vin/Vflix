@@ -24,11 +24,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(30, 30, 47, 0.9) 0%,
-    rgba(20, 20, 20, 0.95) 100%
-  );
+  background: linear-gradient(180deg, rgba(30, 30, 47, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 20px 0;
@@ -36,11 +32,7 @@ header {
 }
 
 header.scrolled {
-  background: linear-gradient(
-    180deg,
-    rgba(30, 30, 47, 0.95) 0%,
-    rgba(20, 20, 20, 0.98) 100%
-  );
+  background: linear-gradient(180deg, rgba(30, 30, 47, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%);
   padding: 15px 0;
 }
 
@@ -80,12 +72,7 @@ header.scrolled {
 
 /* Hero Section - Netflix Style with Blue-Purple Gradient */
 .hero {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(30, 30, 47, 0.4),
-      rgba(20, 20, 20, 0.7)
-    ),
-    url("asset/netflix.jpg");
+  background-image: linear-gradient(to bottom, rgba(30, 30, 47, 0.4), rgba(20, 20, 20, 0.7)), url("asset/netflix.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -175,12 +162,7 @@ header.scrolled {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
 
@@ -208,12 +190,7 @@ header.scrolled {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #2a2a4a 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, #2a2a4a 50%, transparent 100%);
 }
 
 .section-title {
@@ -266,6 +243,87 @@ header.scrolled {
   box-shadow: 0 8px 25px rgba(30, 30, 47, 0.4);
 }
 
+/* Sharing Plan - Blue Theme */
+.package-sharing {
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 25%, #1d4ed8 50%, #2563eb 75%, #1e3a8a 100%);
+  border-color: #60a5fa;
+}
+
+.package-sharing::before {
+  background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 50%, #60a5fa 100%);
+}
+
+.package-sharing:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.package-sharing .buy-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.package-sharing .buy-btn:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Private Plan - Red Theme */
+.package-private {
+  background: linear-gradient(135deg, #dc2626 0%, #e50914 25%, #b91c1c 50%, #ef4444 75%, #dc2626 100%);
+  border-color: #f87171;
+}
+
+.package-private::before {
+  background: linear-gradient(90deg, #f87171 0%, #ef4444 50%, #f87171 100%);
+}
+
+.package-private:hover {
+  border-color: #fca5a5;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+.package-private .buy-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.package-private .buy-btn:hover {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Platinum Plan - Platinum/Silver Theme */
+.package-platinum {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 25%, #9ca3af 50%, #6b7280 75%, #4b5563 100%);
+  border-color: #d1d5db;
+  color: #1f2937;
+}
+
+.package-platinum::before {
+  background: linear-gradient(90deg, #f3f4f6 0%, #e5e7eb 50%, #f3f4f6 100%);
+}
+
+.package-platinum:hover {
+  border-color: #f3f4f6;
+  box-shadow: 0 8px 25px rgba(156, 163, 175, 0.4);
+}
+
+.package-platinum .category-title,
+.package-platinum .category-description,
+.package-platinum .duration,
+.package-platinum .price {
+  color: #ffffff;
+}
+
+.package-platinum .buy-btn {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  color: #ffffff;
+}
+
+.package-platinum .buy-btn:hover {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  box-shadow: 0 4px 12px rgba(75, 85, 99, 0.4);
+}
+
 .category-title {
   font-size: 1.8rem;
   color: #ffffff;
@@ -298,10 +356,26 @@ header.scrolled {
   position: relative;
 }
 
-.price-item:hover {
-  border-color: #2a2a4a;
+/* Category-specific hover effects for price items */
+.package-sharing .price-item:hover {
+  border-color: #60a5fa;
   transform: scale(1.02);
-  box-shadow: 0 4px 15px rgba(30, 30, 47, 0.3);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important;
+}
+
+.package-private .price-item:hover {
+  border-color: #f87171;
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  background: linear-gradient(135deg, #b91c1c, #ef4444) !important;
+}
+
+.package-platinum .price-item:hover {
+  border-color: #f3f4f6;
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(156, 163, 175, 0.3);
+  background: linear-gradient(135deg, #6b7280, #9ca3af) !important;
 }
 
 .duration {
@@ -356,12 +430,7 @@ header.scrolled {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #2a2a4a 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, #2a2a4a 50%, transparent 100%);
 }
 
 .features-grid {
@@ -438,12 +507,7 @@ header.scrolled {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #2a2a4a 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, #2a2a4a 50%, transparent 100%);
 }
 
 .testimonials-grid {
@@ -513,12 +577,7 @@ header.scrolled {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #2a2a4a 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, #2a2a4a 50%, transparent 100%);
 }
 
 .faq-item {
@@ -598,12 +657,7 @@ footer::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #2a2a4a 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, #2a2a4a 50%, transparent 100%);
 }
 
 .footer-content {
@@ -968,6 +1022,6 @@ html {
 
 /* Smooth transitions for all interactive elements */
 * {
-  transition: color 0.3s ease, background-color 0.3s ease,
-    border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s
+    ease;
 }
