@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   color: #ffffff;
   background: #141414;
@@ -19,17 +19,29 @@ body {
   padding: 0 20px;
 }
 
-/* Header Styles */
+/* Header Styles - Netflix Style with Gradient */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(20, 20, 20, 0.95);
-  backdrop-filter: blur(15px);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 47, 0.9) 0%,
+    rgba(20, 20, 20, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: 15px 0;
+  padding: 20px 0;
   transition: all 0.3s ease;
-  border-bottom: 1px solid #333;
+}
+
+header.scrolled {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 47, 0.95) 0%,
+    rgba(20, 20, 20, 0.98) 100%
+  );
+  padding: 15px 0;
 }
 
 .header-content {
@@ -39,20 +51,21 @@ header {
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 900;
-  color: #e50914;
-  text-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: -1px;
 }
 
 .header-cta {
   background: #e50914;
   color: #ffffff;
-  padding: 12px 25px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 25px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -60,18 +73,28 @@ header {
 }
 
 .header-cta:hover {
-  background: #b81d24;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+  background: #f40612;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(229, 9, 20, 0.3);
 }
 
-/* Hero Section */
+/* Hero Section - Netflix Style with Blue-Purple Gradient */
 .hero {
-  background: linear-gradient(135deg, #141414 0%, #1a1a1a 50%, #141414 100%);
-  padding: 120px 0 80px;
-  text-align: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(30, 30, 47, 0.4),
+      rgba(20, 20, 20, 0.7)
+    ),
+    url("asset/netflix.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   position: relative;
+  padding: 140px 0 100px;
+  text-align: center;
   overflow: hidden;
+  color: #ffffff;
 }
 
 .hero::before {
@@ -80,62 +103,69 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 100%;
   background: linear-gradient(
-    45deg,
-    rgba(20, 20, 20, 0.8),
-    rgba(229, 9, 20, 0.1)
+    135deg,
+    rgba(30, 30, 47, 0.8) 0%,
+    rgba(25, 25, 40, 0.6) 25%,
+    rgba(20, 20, 20, 0.4) 50%,
+    rgba(25, 25, 40, 0.6) 75%,
+    rgba(30, 30, 47, 0.8) 100%
   );
   z-index: 1;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1e1e2f 0%, #2a2a4a 50%, #1e1e2f 100%);
+  z-index: 2;
+}
+
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero h1 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: #ffffff;
-  font-weight: 900;
-  text-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
-  }
-  to {
-    text-shadow: 0 0 30px rgba(229, 9, 20, 0.6);
-  }
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: -1px;
 }
 
 .hero p {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   margin-bottom: 40px;
   color: #ffffff;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   opacity: 0.9;
+  font-weight: 400;
 }
 
 .cta-button {
   display: inline-block;
-  background: #e50914;
+  background: linear-gradient(135deg, #e50914 0%, #b8070f 100%);
   color: #ffffff;
-  padding: 18px 40px;
+  padding: 16px 32px;
   text-decoration: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
 }
 
 .cta-button::before {
@@ -159,15 +189,31 @@ header {
 }
 
 .cta-button:hover {
-  background: #b81d24;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
+  background: linear-gradient(135deg, #f40612 0%, #e50914 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
 }
 
-/* Packages Section */
+/* Packages Section - Netflix Style with Gradient */
 .packages {
   padding: 80px 0;
-  background: #141414;
+  background: linear-gradient(to bottom, #1e1e2f 0%, #141414 100%);
+  position: relative;
+}
+
+.packages::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #2a2a4a 50%,
+    transparent 100%
+  );
 }
 
 .section-title {
@@ -175,7 +221,9 @@ header {
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 60px;
   color: #ffffff;
-  font-weight: 900;
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .package-categories {
@@ -187,82 +235,100 @@ header {
 
 .package-category {
   background: #222222;
-  border-radius: 20px;
-  padding: 30px;
-  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 32px;
+  border: 1px solid #333333;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.package-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1e1e2f 0%, #2a2a4a 50%, #1e1e2f 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.package-category:hover::before {
+  transform: scaleX(1);
 }
 
 .package-category:hover {
-  border-color: #e50914;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+  border-color: #2a2a4a;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(30, 30, 47, 0.4);
 }
 
 .category-title {
   font-size: 1.8rem;
-  color: #e50914;
-  margin-bottom: 15px;
+  color: #ffffff;
+  margin-bottom: 16px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .category-description {
   text-align: center;
-  color: #ffffff;
-  margin-bottom: 30px;
+  color: #b3b3b3;
+  margin-bottom: 32px;
   font-size: 1rem;
-  opacity: 0.8;
+  line-height: 1.5;
 }
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
 }
 
 .price-item {
-  background: #141414;
-  border-radius: 15px;
+  background: linear-gradient(135deg, #181818 0%, #1a1a1a 100%);
+  border-radius: 6px;
   padding: 20px;
   text-align: center;
-  border: 1px solid #333;
+  border: 1px solid #333333;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .price-item:hover {
-  border-color: #e50914;
-  transform: scale(1.03);
-  box-shadow: 0 5px 20px rgba(229, 9, 20, 0.2);
+  border-color: #2a2a4a;
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(30, 30, 47, 0.3);
 }
 
 .duration {
-  font-size: 1rem;
-  color: #e50914;
-  font-weight: bold;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  font-weight: 500;
   margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .price {
-  font-size: 1.3rem;
-  font-weight: 900;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .buy-btn {
-  display: flex; /* Ganti dari inline-block */
-  justify-content: center; /* Tengah secara horizontal */
-  align-items: center; /* Tengah secara vertikal */
-  background: #e50914;
+  display: inline-block;
+  background: linear-gradient(135deg, #e50914 0%, #b8070f 100%);
   color: #ffffff;
-  padding: 8px 16px;
+  padding: 10px 16px;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 4px;
   font-size: 0.85rem;
-  font-weight: bold;
+  font-weight: 600;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -271,81 +337,146 @@ header {
 }
 
 .buy-btn:hover {
-  background: #b81d24;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+  background: linear-gradient(135deg, #f40612 0%, #e50914 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
 }
 
-/* Features Section */
+/* Features Section - Netflix Style with Gradient */
 .features {
   padding: 80px 0;
-  background: #1a1a1a;
+  background: linear-gradient(to bottom, #1a1a2a 0%, #141414 100%);
+  position: relative;
+}
+
+.features::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #2a2a4a 50%,
+    transparent 100%
+  );
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 32px;
 }
 
 .feature-item {
   text-align: center;
-  padding: 30px;
+  padding: 32px;
   background: #222222;
-  border-radius: 20px;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  border: 2px solid #333;
+  border: 1px solid #333333;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #1e1e2f 0%, #2a2a4a 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-item:hover::before {
+  opacity: 1;
 }
 
 .feature-item:hover {
-  transform: translateY(-10px);
-  border-color: #e50914;
-  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.1);
+  transform: translateY(-4px);
+  border-color: #2a2a4a;
+  box-shadow: 0 8px 25px rgba(30, 30, 47, 0.3);
 }
 
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #e50914;
+  color: #ffffff;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
 }
 
 .feature-title {
   font-size: 1.4rem;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   color: #ffffff;
   font-weight: 600;
 }
 
 .feature-description {
-  color: #ffffff;
+  color: #b3b3b3;
   line-height: 1.6;
-  opacity: 0.8;
+  font-size: 0.95rem;
 }
 
-/* Testimonials */
+/* Testimonials - Netflix Style with Gradient */
 .testimonials {
   padding: 80px 0;
-  background: #141414;
+  background: linear-gradient(to bottom, #1e1e2f 0%, #141414 100%);
+  position: relative;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #2a2a4a 50%,
+    transparent 100%
+  );
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 32px;
 }
 
 .testimonial-item {
   background: #222222;
-  padding: 25px;
-  border-radius: 15px;
-  border: 2px solid #333;
+  padding: 28px;
+  border-radius: 8px;
+  border: 1px solid #333333;
   transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #1e1e2f 0%, #2a2a4a 50%, #1e1e2f 100%);
+  border-radius: 0 0 0 8px;
 }
 
 .testimonial-item:hover {
-  transform: translateY(-5px);
-  border-color: #e50914;
-  box-shadow: 0 10px 25px rgba(229, 9, 20, 0.1);
+  transform: translateY(-2px);
+  border-color: #2a2a4a;
+  box-shadow: 0 6px 20px rgba(30, 30, 47, 0.3);
 }
 
 .testimonial-text {
@@ -353,42 +484,61 @@ header {
   margin-bottom: 20px;
   color: #ffffff;
   line-height: 1.6;
-  opacity: 0.9;
+  font-size: 0.95rem;
 }
 
 .testimonial-author {
   color: #e50914;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .stars {
-  color: #e50914;
-  margin-bottom: 15px;
+  color: #ffd700;
+  margin-bottom: 16px;
   font-size: 1.1rem;
 }
 
-/* FAQ Section */
+/* FAQ Section - Netflix Style with Gradient */
 .faq {
   padding: 80px 0;
-  background: #1a1a1a;
+  background: linear-gradient(to bottom, #1a1a2a 0%, #141414 100%);
+  position: relative;
+}
+
+.faq::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #2a2a4a 50%,
+    transparent 100%
+  );
 }
 
 .faq-item {
   background: #222222;
-  margin-bottom: 15px;
-  border-radius: 10px;
+  margin-bottom: 16px;
+  border-radius: 8px;
   overflow: hidden;
-  border: 2px solid #333;
+  border: 1px solid #333333;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .faq-item:hover {
-  border-color: #e50914;
+  border-color: #2a2a4a;
+  box-shadow: 0 4px 15px rgba(30, 30, 47, 0.2);
 }
 
 .faq-question {
-  background: #222222;
-  padding: 20px;
+  background: linear-gradient(135deg, #222222 0%, #252525 100%);
+  padding: 24px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -396,48 +546,64 @@ header {
   transition: all 0.3s ease;
   color: #ffffff;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 .faq-question:hover {
-  background: #2a2a2a;
+  background: linear-gradient(135deg, #2a2a2a 0%, #2d2d2d 100%);
 }
 
 .faq-question.active {
-  background: #e50914;
+  background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
   color: #ffffff;
 }
 
 .faq-answer {
-  padding: 0 20px;
+  padding: 0 24px;
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
-  color: #ffffff;
-  opacity: 0.9;
+  color: #b3b3b3;
+  background: #1a1a1a;
 }
 
 .faq-answer.active {
-  padding: 20px;
+  padding: 24px;
   max-height: 200px;
 }
 
 .faq-toggle {
   font-size: 1.5rem;
   transition: transform 0.3s ease;
-  font-weight: bold;
-  color: #e50914;
+  font-weight: 300;
+  color: #ffffff;
 }
 
 .faq-question.active .faq-toggle {
   transform: rotate(45deg);
-  color: #ffffff;
 }
 
-/* Footer */
+/* Footer - Netflix Style with Gradient */
 footer {
-  background: #0a0a0a;
+  background: linear-gradient(to bottom, #1e1e2f 0%, #000000 100%);
   padding: 60px 0 30px;
-  border-top: 2px solid #333;
+  border-top: 1px solid #333333;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #2a2a4a 50%,
+    transparent 100%
+  );
 }
 
 .footer-content {
@@ -448,39 +614,62 @@ footer {
 }
 
 .footer-section h3 {
-  color: #e50914;
+  color: #ffffff;
   margin-bottom: 20px;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
-  color: #ffffff;
+  margin-bottom: 12px;
+  color: #b3b3b3;
   transition: all 0.3s ease;
-  opacity: 0.8;
+  font-size: 0.9rem;
 }
 
 .contact-item:hover {
-  color: #e50914;
-  opacity: 1;
+  color: #ffffff;
 }
 
 .contact-item span:first-child {
-  margin-right: 15px;
-  font-size: 1.1rem;
-  color: #e50914;
+  margin-right: 12px;
+  font-size: 1rem;
+  color: #ffffff;
   width: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #333333 0%, #2a2a2a 100%);
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  border: 1px solid #444444;
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, #e50914 0%, #b8070f 100%);
+  border-color: #e50914;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid #333;
-  color: #ffffff;
-  opacity: 0.6;
+  border-top: 1px solid #333333;
+  color: #737373;
+  font-size: 0.85rem;
 }
 
 /* Animations */
@@ -507,7 +696,7 @@ html {
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 0 15px;
+    padding: 0 16px;
   }
 
   .header-content {
@@ -520,43 +709,45 @@ html {
   }
 
   .header-cta {
-    padding: 10px 20px;
+    padding: 8px 16px;
     font-size: 12px;
   }
 
   .hero {
-    padding: 100px 0 60px;
+    padding: 120px 0 60px;
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
   }
 
   .hero p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 32px;
   }
 
   .cta-button {
-    padding: 15px 30px;
+    padding: 14px 28px;
     font-size: 1rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 40px;
   }
 
   .package-categories {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 24px;
   }
 
   .package-category {
-    padding: 25px 20px;
+    padding: 24px 20px;
   }
 
   .category-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .pricing-grid {
@@ -565,11 +756,11 @@ html {
   }
 
   .price-item {
-    padding: 15px;
+    padding: 16px 12px;
   }
 
   .duration {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .price {
@@ -578,16 +769,16 @@ html {
 
   .buy-btn {
     padding: 8px 12px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 24px;
   }
 
   .feature-item {
-    padding: 25px 20px;
+    padding: 24px 20px;
   }
 
   .feature-icon {
@@ -595,12 +786,12 @@ html {
   }
 
   .feature-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
   }
 
   .testimonial-item {
@@ -608,17 +799,17 @@ html {
   }
 
   .faq-question {
-    padding: 15px;
-    font-size: 0.95rem;
+    padding: 20px;
+    font-size: 0.9rem;
   }
 
   .faq-answer {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 32px;
   }
 
   .footer-section h3 {
@@ -632,11 +823,7 @@ html {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 10px;
-  }
-
-  .header-content {
-    padding: 0 10px;
+    padding: 0 12px;
   }
 
   .logo {
@@ -644,40 +831,33 @@ html {
   }
 
   .header-cta {
-    padding: 8px 15px;
+    padding: 6px 12px;
     font-size: 11px;
   }
 
   .hero {
-    padding: 90px 0 50px;
+    padding: 100px 0 50px;
   }
 
   .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
   }
 
   .hero p {
-    font-size: 1rem;
-    margin-bottom: 30px;
+    font-size: 0.9rem;
   }
 
   .cta-button {
-    padding: 12px 25px;
+    padding: 12px 24px;
     font-size: 0.9rem;
   }
 
   .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+    font-size: 1.6rem;
   }
 
   .package-category {
-    padding: 20px 15px;
-  }
-
-  .category-title {
-    font-size: 1.4rem;
+    padding: 20px 16px;
   }
 
   .pricing-grid {
@@ -686,93 +866,61 @@ html {
   }
 
   .price-item {
-    padding: 12px;
-  }
-
-  .duration {
-    font-size: 0.85rem;
-  }
-
-  .price {
-    font-size: 1.1rem;
-  }
-
-  .buy-btn {
-    padding: 6px 10px;
-    font-size: 0.75rem;
+    padding: 14px 10px;
   }
 
   .feature-item {
-    padding: 20px 15px;
+    padding: 20px 16px;
   }
 
   .feature-icon {
     font-size: 2rem;
   }
 
-  .feature-title {
-    font-size: 1.2rem;
-  }
-
   .testimonial-item {
-    padding: 15px;
+    padding: 16px;
   }
 
   .faq-question {
-    padding: 12px;
-    font-size: 0.9rem;
-  }
-
-  .faq-answer {
+    padding: 16px;
     font-size: 0.85rem;
   }
 
   .faq-answer.active {
-    padding: 15px;
-  }
-
-  .footer-section h3 {
-    font-size: 1.1rem;
-  }
-
-  .contact-item {
-    font-size: 0.9rem;
-  }
-
-  .social-link {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 16px;
   }
 }
 
 /* Premium Package Styling */
 .price-item.premium {
   position: relative;
-  border-color: #e50914;
-  box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+  border-color: #2a2a4a;
+  box-shadow: 0 0 20px rgba(30, 30, 47, 0.4);
 }
 
 .price-item.premium::after {
-  content: "🔥 POPULER";
+  content: "POPULER";
   position: absolute;
-  top: -12px;
+  top: -10px;
   right: -8px;
-  background: #e50914;
+  background: linear-gradient(135deg, #e50914 0%, #b8070f 100%);
   color: #ffffff;
-  padding: 4px 12px;
-  border-radius: 15px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  box-shadow: 0 3px 10px rgba(229, 9, 20, 0.3);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.3);
 }
 
 /* Floating WhatsApp Button */
 .floating-whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
   background: #25d366;
   border-radius: 50%;
   display: flex;
@@ -792,10 +940,34 @@ html {
 
 @media (max-width: 768px) {
   .floating-whatsapp {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     font-size: 20px;
-    bottom: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 20px;
   }
+}
+
+/* Netflix-style gradient animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animation {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
