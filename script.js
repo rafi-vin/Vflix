@@ -68,33 +68,33 @@ document.querySelectorAll(".fade-in-up").forEach((el) => {
   observer.observe(el)
 })
 
-// Category-specific price item hover effects
-document.querySelectorAll(".package-sharing .price-item").forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    item.style.background = "linear-gradient(135deg, #1e3a8a, #3b82f6)"
-  })
-  item.addEventListener("mouseleave", () => {
-    item.style.background = "linear-gradient(135deg, #181818, #1a1a1a)"
-  })
-})
+// // Category-specific price item hover effects
+// document.querySelectorAll(".package-sharing .price-item").forEach((item) => {
+//   item.addEventListener("mouseenter", () => {
+//     item.style.background = "linear-gradient(135deg, #1e3a8a, #3b82f6)"
+//   })
+//   item.addEventListener("mouseleave", () => {
+//     item.style.background = "linear-gradient(135deg, #181818, #1a1a1a)"
+//   })
+// })
 
-document.querySelectorAll(".package-private .price-item").forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    item.style.background = "linear-gradient(135deg, #b91c1c, #ef4444)"
-  })
-  item.addEventListener("mouseleave", () => {
-    item.style.background = "linear-gradient(135deg, #181818, #1a1a1a)"
-  })
-})
+// document.querySelectorAll(".package-private .price-item").forEach((item) => {
+//   item.addEventListener("mouseenter", () => {
+//     item.style.background = "linear-gradient(135deg, #b91c1c, #ef4444)"
+//   })
+//   item.addEventListener("mouseleave", () => {
+//     item.style.background = "linear-gradient(135deg, #181818, #1a1a1a)"
+//   })
+// })
 
-document.querySelectorAll(".package-platinum .price-item").forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    item.style.background = "linear-gradient(135deg, #6b7280, #9ca3af)"
-  })
-  item.addEventListener("mouseleave", () => {
-    item.style.background = "linear-gradient(135deg, #181818, #1a1a1a)"
-  })
-})
+// document.querySelectorAll(".package-platinum .price-item").forEach((item) => {
+//   item.addEventListener("mouseenter", () => {
+//     item.style.background = "linear-gradient(135deg, #6b7280, #9ca3af)"
+//   })
+//   item.addEventListener("mouseleave", () => {
+//     item.style.background = "linear-gradient(135deg, #181818, #1a1a1a)"
+//   })
+// })
 
 // Add click tracking for CTA buttons
 document.querySelectorAll(".cta-button, .header-cta, .buy-btn").forEach((button) => {
